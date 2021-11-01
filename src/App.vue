@@ -41,8 +41,6 @@ export default {
                 (friend) => friend.id === friendID
             );
             identifiedFriend.isFavourite = !identifiedFriend.isFavourite;
-
-            console.log('toggleFrientdFav ' + identifiedFriend + ' ' + friendID);
         }
     }
 }

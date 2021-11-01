@@ -44,6 +44,16 @@ export default {
         },
 
     },
+    //emits: ['toggle-fav']
+    emits: {
+        'toggle-fav': function (id) {
+            if (id) {
+                return true;
+            } else {
+                console.log("Missing ID");
+            }
+        }
+    },
     /* props: [
         'name',
         'phoneNumber',
