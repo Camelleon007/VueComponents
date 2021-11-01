@@ -20,12 +20,36 @@ export default {
     components: {
         RealButton,
     },
-    props: [
+    props: {
+        name: {
+            type: String,
+            required: true
+        },
+        phoneNumber: {
+            type: String,
+            required: true
+        },
+        emailAddress: {
+            type: String,
+            required: true
+        },
+        isFavourite: {
+            type: String,
+            required: false,
+            default: '0',
+            validator: function(value) {
+                return value === '1' || value ==='0';
+            }
+        },
+
+    },
+    /* props: [
         'name',
         'phoneNumber',
         'emailAddress',
         'isFavourite'
-    ],
+    ], */
+
     data() {
         return {
             detailsAreVisible: false,
