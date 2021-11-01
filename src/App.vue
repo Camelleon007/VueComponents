@@ -5,11 +5,13 @@
     name="Beniu"
     phone-number="1234"
     email-address="beniu@gmail.com"
+    is-favourite="1"
     ></friend-contact>
     <friend-contact
     name="Krychu"
     phone-number="5678"
     email-address="krychu@gmail.com"
+    is-favourite="0"
     ></friend-contact>
 </ul>
 </template>
