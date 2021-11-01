@@ -1,7 +1,9 @@
 <template>
   <li>
       <h2>{{ name }}</h2>
-      <button @click="toggleDetails">{{ detailsAreVisible ? 'Hide' : 'Show' }} details</button>
+      <real-button @click="toggleDetails" button-color="#ff0077" edge-color="#a0098c">
+          {{ detailsAreVisible ? 'Hide' : 'Show' }} details
+      </real-button>
       <ul v-if="detailsAreVisible">
           <li><strong>Phone:</strong>{{phoneNumber}}</li>
           <li><strong>Email:</strong>{{emailAddress}}</li>
@@ -10,7 +12,11 @@
 </template>
 
 <script>
+import RealButton from "vue-real-button";
 export default {
+    components: {
+        RealButton,
+    },
     props: [
         'name',
         'phoneNumber',
