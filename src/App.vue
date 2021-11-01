@@ -1,8 +1,16 @@
 <template>
 <header><h1>my friends</h1></header>
 <ul>
-    <friend-contact></friend-contact>
-    <friend-contact></friend-contact>
+    <friend-contact
+    name="Beniu"
+    phone-number="1234"
+    email-address="beniu@gmail.com"
+    ></friend-contact>
+    <friend-contact
+    name="Krychu"
+    phone-number="5678"
+    email-address="krychu@gmail.com"
+    ></friend-contact>
 </ul>
 </template>
 
@@ -20,7 +28,7 @@ export default {
                 {
                     id: 'krychu',
                     name: 'Krystian Ciemniecki',
-                    phone: '1234',
+                    phone: '5678',
                     mail: 'krychu@gmail.pl',
                 }
             ]
