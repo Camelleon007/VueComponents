@@ -1,18 +1,13 @@
 <template>
 <header><h1>my friends</h1></header>
 <ul>
-    <friend-contact
-    name="Beniu"
-    phone-number="1234"
-    email-address="beniu@gmail.com"
-    is-favourite="1"
-    ></friend-contact>
-    <friend-contact
-    name="Krychu"
-    phone-number="5678"
-    email-address="krychu@gmail.com"
-    
-    ></friend-contact>
+    <friend-contact v-for="friend in friends"
+    :key="friend.id"
+    :name="friend.name"
+    :phone-number="friend.phone"
+    :email-address="friend.mail"
+    :is-favourite="true"
+    ></friend-contact>    
 </ul>
 </template>
 
