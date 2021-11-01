@@ -1,6 +1,6 @@
 <template>
   <li>
-      <h2>{{ name }} {{friendIsFavourite ? '(favourite)' : ''}}</h2>
+      <h2>{{ name }} {{isFavourite ? '(favourite)' : ''}}</h2>
       <real-button @click="toggleFav" button-color="#ff0077" edge-color="#a0098c">
           Toggle Fav
       </real-button>
@@ -21,7 +21,10 @@ export default {
         RealButton,
     },
     props: {
-        
+        id: {
+            type: String,
+            required: true
+        },
         name: {
             type: String,
             required: true
@@ -50,7 +53,7 @@ export default {
 
     data() {
         return {
-            detailsAreVisible: false,            
+            detailsAreVisible: false,
             friendIsFavourite: this.isFavourite,
             
         }
@@ -60,9 +63,8 @@ export default {
             this.detailsAreVisible = !this.detailsAreVisible;
         },
         toggleFav() {
-            console.log(this.friendIsFavourite);
-            this.friendIsFavourite = !this.friendIsFavourite;                
-            
+            this.$emit('toggle-fav', this.id);
+            this.friendIsFavourite = !this.friendIsFavourite;
         }
     }
 

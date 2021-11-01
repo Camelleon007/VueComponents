@@ -3,10 +3,12 @@
 <ul>
     <friend-contact v-for="friend in friends"
     :key="friend.id"
+    :id="friend.id"
     :name="friend.name"
     :phone-number="friend.phone"
     :email-address="friend.mail"
-    :is-favourite="true"
+    :is-favourite="friend.isFavourite"
+    @toggle-fav="toggleFrientdFav"
     ></friend-contact>    
 </ul>
 </template>
@@ -21,14 +23,26 @@ export default {
                     name: 'Baniamin Wiśniewski',
                     phone: '1234',
                     mail: 'beniu@gmail.pl',
+                    isFavourite: true
                 },
                 {
                     id: 'krychu',
                     name: 'Krystian Ciemniecki',
                     phone: '5678',
                     mail: 'krychu@gmail.pl',
+                    isFavourite: false
                 }
             ]
+        }
+    },
+    methods: {
+        toggleFrientdFav(friendID) {            
+            const identifiedFriend = this.friends.find(
+                (friend) => friend.id === friendID
+            );
+            identifiedFriend.isFavourite = !identifiedFriend.isFavourite;
+
+            console.log('toggleFrientdFav ' + identifiedFriend + ' ' + friendID);
         }
     }
 }
