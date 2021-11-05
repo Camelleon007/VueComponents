@@ -1,25 +1,30 @@
-<template>
+<template class="block">
+
+  <div class="box"> 
+
   <li>
-      <h2>{{ name }} {{isFavourite ? '(favourite)' : ''}}</h2>
-      <real-button @click="toggleFav" button-color="#ff0077" edge-color="#a0098c">
+      <h2 class="title">{{ name }} {{isFavourite ? '(favourite)' : ''}}</h2>
+      <button class="button is-warning" @click="toggleFav">
           Toggle Fav
-      </real-button>
-      <real-button @click="toggleDetails" button-color="#ff0077" edge-color="#a0098c">
+      </button>
+      <button class="button is-info" @click="toggleDetails">
           {{ detailsAreVisible ? 'Hide' : 'Show' }} details
-      </real-button>
+      </button>
+      <div class="content is-medium">
+    
       <ul v-if="detailsAreVisible">
           <li><strong>Phone:</strong>{{phoneNumber}}</li>
           <li><strong>Email:</strong>{{emailAddress}}</li>
       </ul>
+      </div>
   </li>
+
+  </div>
+
 </template>
 
 <script>
-import RealButton from "vue-real-button";
-export default {
-    components: {
-        RealButton,
-    },
+export default {    
     props: {
         id: {
             type: String,
